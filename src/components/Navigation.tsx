@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import { NavItem } from './NavItem';
 
 const navItems = [
-  { label: 'About', href: '#about' },
+  { label: 'About', href: '/about', isPage: true },
   { label: 'Work', href: '#work' },
   { label: 'Media', href: '#media' },
   { label: 'Contact', href: '#contact' },
@@ -62,7 +62,7 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
         <ul className="flex items-center gap-6 md:gap-12">
           {navItems.map((item) => (
             <li key={item.href}>
-              <NavItem label={item.label} href={item.href} />
+              <NavItem label={item.label} href={item.href} isPage={item.isPage} />
             </li>
           ))}
         </ul>
