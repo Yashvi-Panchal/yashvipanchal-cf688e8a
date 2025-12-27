@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import yashviPortrait from "@/assets/yashvi-portrait.jpg";
 
 export const AboutPage = () => {
   return (
@@ -72,9 +73,9 @@ export const AboutPage = () => {
               <div className="sticky top-24">
                 <div className="aspect-[4/5] bg-muted border border-border overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=750&fit=crop&crop=face"
+                    src={yashviPortrait}
                     alt="Yashvi Panchal"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
                 <p className="text-xs text-muted-foreground mt-3 text-center font-sans">
