@@ -58,8 +58,49 @@ Most importantly, it reinforced my belief that the best way to understand a syst
   }
 };
 
+// Living Inside an Immigration System project with full narrative
+const immigrationProject: Project = {
+  id: 'living-inside-an-immigration-system',
+  title: 'Living Inside an Immigration System',
+  descriptor: 'Exploring immigration as a human experience, not just a process',
+  context: 'Self-initiated exploration based on lived experience and observation.',
+  explored: 'Immigration as a human system — one that shapes how people think, plan, and move through their lives while outcomes remain largely outside their control.',
+  narrative: {
+    overview: `Immigration systems are often described through policies, timelines, and eligibility criteria. But for the people inside them, immigration is experienced very differently — as waiting, uncertainty, and constant interpretation of incomplete information.
+
+This self-initiated project explores immigration not as a legal or administrative process, but as a human system — one that shapes how people think, plan, and move through their lives while outcomes remain largely outside their control.`,
+
+    whyItMattered: `For individuals navigating immigration, decisions are rarely low-stakes. They affect work, stability, identity, and belonging — often without clear timelines or guarantees.
+
+What makes this system particularly complex is not just its rules, but the lack of clarity around progress, expectations, and future states. Understanding how this ambiguity is experienced felt important, especially because it is so normalized within the system itself.`,
+
+    whatIObserved: `Through lived experience and ongoing observation, several recurring patterns became clear:
+
+People spend long periods waiting without meaningful feedback. Information is technically available, but difficult to interpret or contextualize. Timelines feel abstract and unreliable. Planning life decisions becomes emotionally and cognitively demanding. Individuals carry the burden of uncertainty quietly and continuously.
+
+Rather than moments of failure, the experience is defined by persistent ambiguity — and the effort required to live around it.`,
+
+    howIApproached: `I approached the system as a network of signals rather than a linear journey: updates, silence, terminology, forms, and unofficial interpretations all shaping how people understand their position.
+
+By focusing on patterns of behavior and emotional response, I began to see how uncertainty itself becomes a defining feature of the system — not an exception, but a condition people are expected to adapt to.`,
+
+    whatIExplored: `Instead of solutions, this project explored questions and directions:
+
+What does clarity look like when outcomes cannot be guaranteed? How might systems acknowledge uncertainty without amplifying anxiety? Where does silence create more harm than transparency? What support feels grounding rather than procedural?
+
+These explorations focus on reducing cognitive and emotional load, even when structural complexity remains.`,
+
+    whatItShaped: `This project reinforced a belief that now guides much of my work:
+
+When systems withhold clarity, people compensate with emotional labor.
+
+Immigration systems don't just process applications — they shape how people experience time, trust, and control. Designing clarity in such systems is not about simplifying rules, but about recognizing the human cost of prolonged uncertainty.`
+  }
+};
+
 export const projects: Project[] = [
   cppDisabilityProject,
+  immigrationProject,
   {
     id: 'mapping-decision-architectures',
     title: 'Mapping Decision Architectures',
