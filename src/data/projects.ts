@@ -98,9 +98,54 @@ Immigration systems don't just process applications — they shape how people ex
   }
 };
 
+// Immigration, Interpretation, and Information Flow project with full narrative
+const immigrationInterpretationProject: Project = {
+  id: 'immigration-interpretation-information-flow',
+  title: 'Immigration, Interpretation, and Information Flow',
+  descriptor: 'Exploring how people make sense of communication from complex systems',
+  context: 'Research and synthesis as part of a human-centred design class project in collaboration with a government partner.',
+  explored: 'The experience of meaning-making in the face of ambiguity — how people interpret and respond to communications from immigration systems.',
+  narrative: {
+    overview: `Immigration is not just a process of forms and decisions — it is a system of information exchange. People engage with it through emails, letters, web pages, and instructions that are often unclear, inconsistent, or difficult to interpret.
+
+This project is an exploration of how people interpret and respond to communications from immigration systems, particularly those from IRCC (Immigration, Refugees and Citizenship Canada). Rather than focusing on policy or legality, it considers the experience of meaning-making in the face of ambiguity.`,
+
+    whyItMattered: `For many individuals, language is the lens through which they understand their status, their timeline, and their future. When that language is unclear or open to interpretation, it becomes a barrier — one that creates stress, hesitation, and emotional labor.
+
+The way information is communicated can shape people's confidence in the system, their ability to plan, and their emotional well-being.
+
+This project matters because clarity in communication isn't simply cosmetic — it affects how people experience agency within a system that already feels uncertain.`,
+
+    whatIObserved: `Across conversations and reflection, several consistent patterns emerged:
+
+Official messages often assume contextual knowledge that people don't have. Ambiguous wording creates multiple interpretations. People spend time guessing meaning rather than acting on it. Silence or lack of updates feels worse than clear "no" or "yes." Gaps between expectation and message interpretation increase anxiety.
+
+In many cases, it wasn't the absence of information that caused pain — it was the effort required to interpret what was there.`,
+
+    howIApproached: `I approached this as an exploration of interpretation rather than information deficiency.
+
+Instead of assuming that more data solves confusion, I looked at: How assumptions are baked into wording. How structure and order influence expectation. Where the burden of interpretation shifts onto the person. How people create narratives from partial signals.
+
+This helped me see communication as a living experience — not a static instruction set.`,
+
+    whatIExplored: `Rather than proposing rigid solutions, this project explored directions grounded in human experience:
+
+What it looks like when communication anticipates interpretation challenges. How transparency about uncertainty can reduce cognitive load. Why simple language — not simpler messages — matters. Where meta-guidance (explaining why something is structured a certain way) can build trust.
+
+These explorations focus on respecting the person in front of the message, not just optimizing wording.`,
+
+    whatItShaped: `This project reinforced a pattern I've seen repeatedly:
+
+Ambiguity in systems doesn't just frustrate people — it becomes part of how they live inside a system.
+
+Meaning-making is a cognitive effort. When systems communicate in ways that require interpretation, people spend mental energy guessing rather than acting. Clarity isn't about simplification — it's about responsiveness to human meaning-making.`
+  }
+};
+
 export const projects: Project[] = [
   cppDisabilityProject,
   immigrationProject,
+  immigrationInterpretationProject,
   {
     id: 'mapping-decision-architectures',
     title: 'Mapping Decision Architectures',
