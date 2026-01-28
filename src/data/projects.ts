@@ -98,6 +98,44 @@ Immigration systems don't just process applications — they shape how people ex
   }
 };
 
+// Exploring Clarity in Everyday Systems project with full narrative
+const everydaySystemsProject: Project = {
+  id: 'exploring-clarity-everyday-systems',
+  title: 'Exploring Clarity in Everyday Systems',
+  descriptor: 'Observing how small frictions in daily tools and interactions shape behavior, decisions, and trust',
+  context: 'Self-initiated inquiry into micro-systems and their relationship to larger patterns of human behavior.',
+  explored: 'How minor friction points in everyday tools and experiences reveal patterns about cognition, trust, and the systemic nature of clarity.',
+  narrative: {
+    overview: `Systems aren't always formal or institutional. Every day, we navigate rules, expectations, and tools that guide our decisions — often invisibly. This project explores everyday systems I encounter, from scheduling tools to service experiences, and how minor friction points reveal larger patterns about human behavior and cognition.
+
+Rather than redesigning interfaces, the focus is on observing and understanding how clarity (or the lack of it) shapes decisions, emotions, and trust.`,
+
+    whyItMattered: `Small, unnoticed frictions accumulate. They affect confidence, efficiency, and well-being — even in low-stakes contexts. Observing these everyday systems provided insight into how humans interact with complexity, how assumptions are embedded into rules, and how communication can either reduce or amplify stress.
+
+This matters because understanding micro-systems informs how larger, more complex systems could be approached.`,
+
+    whatIObserved: `Patterns emerged across multiple everyday interactions:
+
+Instructions are often ambiguous or inconsistent, even when repeated frequently. People create personal "workarounds" to navigate unclear expectations. Feedback loops are slow or missing, creating uncertainty. Small gaps in clarity amplify anxiety or hesitation.
+
+These patterns mirrored those seen in larger, institutional systems — just at a smaller, more immediate scale.`,
+
+    howIApproached: `I synthesized observations by focusing on cause and effect in human behavior, not outputs or tools. Each friction point was treated as a signal, highlighting the gap between expectation and reality.
+
+This approach reinforced that clarity is systemic: it emerges from communication, structure, and human interpretation, not just design or rules.`,
+
+    whatIExplored: `Instead of proposing solutions, I explored directions and questions:
+
+How could instructions anticipate common misunderstandings? Where could small signals reduce cognitive load? How do people internalize system complexity when guidance is lacking? What patterns repeat across micro- and macro-systems?
+
+The aim was to extract insights that could be applied across contexts — personal, organizational, or societal.`,
+
+    whatItShaped: `This project deepened my appreciation for observing before intervening. It reinforced that even small, informal systems carry the same structural dynamics as larger ones — ambiguity, assumption, and the quiet labor of interpretation.
+
+Understanding micro-systems has become a lens I now apply to more complex contexts: if clarity breaks down in simple interactions, it will compound in institutional ones.`
+  }
+};
+
 // Immigration, Interpretation, and Information Flow project with full narrative
 const immigrationInterpretationProject: Project = {
   id: 'immigration-interpretation-information-flow',
@@ -146,6 +184,7 @@ export const projects: Project[] = [
   cppDisabilityProject,
   immigrationProject,
   immigrationInterpretationProject,
+  everydaySystemsProject,
   {
     id: 'mapping-decision-architectures',
     title: 'Mapping Decision Architectures',
