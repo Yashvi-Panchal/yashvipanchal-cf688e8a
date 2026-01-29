@@ -16,55 +16,88 @@ export const AboutPage = () => {
                 About
               </h1>
               
-              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
+              {/* Intro */}
+              <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg mb-12">
                 <p>
-                  I'm a systems-oriented thinker drawn to the patterns beneath everyday complexity. My work sits at the intersection of behavioral insight, strategic clarity, and human-centered design.
-                </p>
-                
-                <p>
-                  Whether through writing, research, or facilitation, I help individuals and organizations see their challenges more clearly—and move through them with intention.
-                </p>
-                
-                <p>
-                  My background spans creative writing, cognitive exploration, and strategic consulting. I believe that the most powerful insights often come from paying closer attention to what's already there.
-                </p>
-
-                <p>
-                  Over the years, I've worked with startups, established organizations, and independent creators to clarify their narratives, refine their positioning, and develop strategies rooted in genuine understanding rather than assumption.
-                </p>
-
-                <p>
-                  When I'm not working, you'll find me reading about behavioral economics, exploring new cities, or writing essays that attempt to make sense of the messy, beautiful complexity of being human.
+                  I'm a designer and researcher with experience in user research, service design, and project coordination. My background combines design studio work with public-sector research, where I've worked on understanding user needs and improving complex services.
                 </p>
               </div>
 
-              {/* Areas of Focus */}
-              <div className="mt-12 bg-card border border-border p-6 md:p-8">
+              {/* Background */}
+              <div className="mb-12">
                 <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
-                  Areas of Focus
+                  Background
                 </h2>
-                <ul className="space-y-3 font-sans">
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary mt-1.5">•</span>
-                    <span>Systems thinking & complexity</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary mt-1.5">•</span>
-                    <span>Human behavior & decision-making</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary mt-1.5">•</span>
-                    <span>Clarity of cognition & communication</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary mt-1.5">•</span>
-                    <span>Strategic narrative & positioning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary mt-1.5">•</span>
-                    <span>Creative inquiry & research</span>
-                  </li>
-                </ul>
+                <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
+                  <p>
+                    My professional experience spans both commercial and public-sector contexts.
+                  </p>
+                  <p>
+                    At A Cube Inc. in India, I worked as a Design Assistant, supporting product development, client communication, and design documentation for commercial projects.
+                  </p>
+                  <p>
+                    More recently, I collaborated with Employment and Social Development Canada on a service design project focused on improving the Canada Pension Plan Disability experience. My work included conducting user interviews, creating journey maps, and synthesizing research insights into practical recommendations.
+                  </p>
+                  <p>
+                    I hold two post-graduate diplomas from Algonquin College, Ottawa — Interactive Media Management and Human-Centred Design — and a Bachelor of Design from India.
+                  </p>
+                </div>
+              </div>
+
+              {/* What I Do */}
+              <div className="mb-12">
+                <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+                  What I Do
+                </h2>
+                <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
+                  <p>
+                    I'm interested in work at the intersection of research, design, and communication. This includes understanding user needs through interviews, mapping service journeys, coordinating with stakeholders, and translating insights into clear, actionable recommendations.
+                  </p>
+                  <p>
+                    My skills include user research, journey mapping, information synthesis, stakeholder communication, and design thinking.
+                  </p>
+                </div>
+              </div>
+
+              {/* Currently */}
+              <div className="mb-12">
+                <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+                  Currently
+                </h2>
+                <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
+                  <p>
+                    I'm seeking opportunities in UX research, service design, customer experience, or coordination roles. I'm open to full-time, contract, or project-based work across Canada.
+                  </p>
+                </div>
+              </div>
+
+              {/* Let's Connect */}
+              <div className="bg-card border border-border p-6 md:p-8">
+                <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+                  Let's Connect
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-sm text-muted-foreground block mb-1">Email</span>
+                    <a
+                      href="mailto:yashvipanchal22@gmail.com"
+                      className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors"
+                    >
+                      yashvipanchal22@gmail.com
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-sm text-muted-foreground block mb-1">LinkedIn</span>
+                    <a
+                      href="https://linkedin.com/in/yashvipanchal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors"
+                    >
+                      linkedin.com/in/yashvipanchal
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
