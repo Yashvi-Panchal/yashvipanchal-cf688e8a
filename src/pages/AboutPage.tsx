@@ -1,18 +1,19 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import yashviPortrait from "@/assets/yashvi-portrait.jpg";
-
 export const AboutPage = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation breadcrumb={{ label: "About", href: "/about" }} />
+  return <div className="min-h-screen bg-background text-foreground">
+      <Navigation breadcrumb={{
+      label: "About",
+      href: "/about"
+    }} />
       
       <main className="pt-24 pb-16">
         <div className="section-container">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             {/* Text Content */}
             <div className="md:col-span-7 order-2 md:order-1">
-              <h1 className="font-serif text-4xl md:text-5xl font-medium mb-8">
+              <h1 className="font-serif text-4xl font-medium mb-8 text-primary md:text-4xl">
                 About
               </h1>
               
@@ -79,21 +80,13 @@ export const AboutPage = () => {
                 <div className="space-y-4">
                   <div>
                     <span className="text-sm text-muted-foreground block mb-1">Email</span>
-                    <a
-                      href="mailto:yashvipanchal22@gmail.com"
-                      className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors"
-                    >
+                    <a href="mailto:yashvipanchal22@gmail.com" className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors">
                       yashvipanchal22@gmail.com
                     </a>
                   </div>
                   <div>
                     <span className="text-sm text-muted-foreground block mb-1">LinkedIn</span>
-                    <a
-                      href="https://linkedin.com/in/yashvipanchal"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors"
-                    >
+                    <a href="https://linkedin.com/in/yashvipanchal" target="_blank" rel="noopener noreferrer" className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors">
                       linkedin.com/in/yashvipanchal
                     </a>
                   </div>
@@ -105,11 +98,7 @@ export const AboutPage = () => {
             <div className="md:col-span-5 order-1 md:order-2">
               <div className="sticky top-24">
                 <div className="aspect-[4/5] bg-muted border border-border overflow-hidden">
-                  <img 
-                    src={yashviPortrait}
-                    alt="Yashvi Panchal"
-                    className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                  />
+                  <img src={yashviPortrait} alt="Yashvi Panchal" className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" />
                 </div>
                 <p className="text-xs text-muted-foreground mt-3 text-center font-sans">
                   Yashvi Panchal
@@ -121,8 +110,6 @@ export const AboutPage = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutPage;
