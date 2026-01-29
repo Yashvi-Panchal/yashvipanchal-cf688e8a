@@ -10,15 +10,11 @@ export const About = () => {
           <div className="md:col-span-7">
             <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
               <p>
-                I'm a systems-oriented thinker drawn to the patterns beneath everyday complexity. My work sits at the intersection of behavioral insight, strategic clarity, and human-centered design.
+                I'm a designer and researcher with experience in user research, service design, and project coordination. My background combines design studio work with public-sector research, where I've worked on understanding user needs and improving complex services.
               </p>
               
               <p>
-                Whether through writing, research, or facilitation, I help individuals and organizations see their challenges more clearly—and move through them with intention.
-              </p>
-              
-              <p>
-                My background spans creative writing, cognitive exploration, and strategic consulting. I believe that the most powerful insights often come from paying closer attention to what's already there.
+                I'm interested in work at the intersection of research, design, and communication — understanding user needs, mapping service journeys, and translating insights into clear, actionable recommendations.
               </p>
             </div>
           </div>
@@ -26,28 +22,28 @@ export const About = () => {
           <div className="md:col-span-5">
             <div className="bg-card border border-border p-6 md:p-8">
               <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
-                Areas of Focus
+                Skills
               </h3>
               <ul className="space-y-3 font-sans">
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1.5">•</span>
-                  <span>Systems thinking & complexity</span>
+                  <span>User research & interviews</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1.5">•</span>
-                  <span>Human behavior & decision-making</span>
+                  <span>Journey mapping</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1.5">•</span>
-                  <span>Clarity of cognition & communication</span>
+                  <span>Information synthesis</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1.5">•</span>
-                  <span>Strategic narrative & positioning</span>
+                  <span>Stakeholder communication</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1.5">•</span>
-                  <span>Creative inquiry & research</span>
+                  <span>Design thinking</span>
                 </li>
               </ul>
             </div>

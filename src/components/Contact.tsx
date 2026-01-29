@@ -8,7 +8,7 @@ export const Contact = () => {
           </h2>
           
           <p className="text-foreground/80 font-sans text-lg leading-relaxed mb-12">
-            I'm always interested in conversations about systems, clarity, and the deeper patterns of how things work. Whether you're exploring a complex challenge or simply want to exchange ideas—I'd enjoy hearing from you.
+            I'm seeking opportunities in UX research, service design, customer experience, or coordination roles. I'm open to full-time, contract, or project-based work across Canada.
           </p>
           
           <div className="space-y-6">
@@ -17,10 +17,10 @@ export const Contact = () => {
                 Email
               </span>
               <a
-                href="mailto:hello@yashvipanchal.com"
+                href="mailto:yashvipanchal22@gmail.com"
                 className="font-sans text-lg text-foreground hover:text-primary hover-underline transition-colors"
               >
-                hello@yashvipanchal.com
+                yashvipanchal22@gmail.com
               </a>
             </div>
             
