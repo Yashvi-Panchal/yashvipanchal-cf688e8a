@@ -63,21 +63,6 @@ const cppDisabilityProject: Project = {
       alt: 'CPP Disability application process flowchart showing decision points and pathways',
       caption: 'Mapping the decision architecture: the complex pathways through the CPP-D application system',
     },
-    afterWhatIObserved: {
-      src: cppdJourneyMapCPPD,
-      alt: 'Journey map showing emotional journey of CPP-D applicants',
-      caption: 'Emotional journey of an applicant who had their application approved',
-    },
-    afterHowIApproached: {
-      src: cppdAffinityMapping,
-      alt: 'Affinity mapping of participant research insights',
-      caption: 'Synthesizing participant insights through affinity mapping',
-    },
-    afterWhatIExplored: {
-      src: cppdJourneyMapPR,
-      alt: 'Detailed journey map of permanent resident applicant experience',
-      caption: 'Comparative journey map exploring patterns across government service experiences',
-    },
   },
   narrative: {
     overview: `This project began with a simple question: what does it actually feel like to apply for disability benefits in Canada? The Canada Pension Plan Disability program is designed to support people who can no longer work due to a severe and prolonged disability. In theory, it's a safety net. In practice, navigating it can feel like a full-time job—one that many applicants are, by definition, unable to do.
