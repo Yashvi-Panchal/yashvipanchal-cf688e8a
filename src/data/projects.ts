@@ -53,7 +53,7 @@ const cppDisabilityProject: Project = {
   context: 'Research and synthesis as part of a service design project with Employment and Social Development Canada.',
   explored: 'The cognitive load of bureaucratic systems and how complexity creates unintended barriers for people already in vulnerable situations.',
   metadata: {
-    role: 'Design Researcher',
+    role: 'User Experience Researcher',
     focus: 'User Research & Journey Mapping',
     context: 'Government Partnership',
   },
