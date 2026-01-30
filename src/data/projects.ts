@@ -1,3 +1,9 @@
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -5,6 +11,23 @@ export interface Project {
   context: string;
   explored: string;
   fullDescription?: string;
+  // Metadata for project header
+  metadata?: {
+    role?: string;
+    focus?: string;
+    context?: string;
+    timeline?: string;
+  };
+  // Hero image for the project
+  heroImage?: ProjectImage;
+  // Images for between sections
+  sectionImages?: {
+    afterOverview?: ProjectImage;
+    afterWhyItMattered?: ProjectImage;
+    afterWhatIObserved?: ProjectImage;
+    afterHowIApproached?: ProjectImage;
+    afterWhatIExplored?: ProjectImage;
+  };
   // Rich narrative sections for detailed project pages
   narrative?: {
     overview?: string;
