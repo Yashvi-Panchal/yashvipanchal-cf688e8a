@@ -6,11 +6,11 @@ export const Hero = () => {
             Designer & Researcher
           </p>
           
-          <h1 className="font-serif text-5xl lg:text-8xl font-medium tracking-tight mb-8 animate-fade-up-delay-1 px-0 my-[7px] md:text-9xl">
+          <h1 className="font-serif text-5xl lg:text-8xl font-medium tracking-tight mb-8 animate-fade-up-delay-1 px-0 my-[7px] md:text-7xl">
             Yashvi Panchal
           </h1>
           
-          <p className="text-xl md:text-2xl font-sans leading-relaxed max-w-2xl animate-fade-up-delay-2 text-muted-foreground">
+          <p className="text-xl font-sans leading-relaxed max-w-2xl animate-fade-up-delay-2 text-muted-foreground md:text-lg">
             I help organizations understand their users and improve services through research, design thinking, and clear communication.
           </p>
           
