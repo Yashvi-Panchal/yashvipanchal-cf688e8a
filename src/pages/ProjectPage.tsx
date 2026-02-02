@@ -45,75 +45,63 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          {/* Hero Content - Two Column Layout */}
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-              {/* Left: Title & Descriptor */}
-              <div>
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-6 text-foreground">
-                  {project.title}
-                </h1>
-                {project.descriptor && (
-                  <p className="text-lg md:text-xl text-muted-foreground font-sans leading-relaxed">
-                    {project.descriptor}
-                  </p>
+          {/* Hero Content - Stacked Layout */}
+          <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-20 text-center">
+            {/* Title */}
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-6 text-foreground">
+              {project.title}
+            </h1>
+            
+            {/* Descriptor */}
+            {project.descriptor && (
+              <p className="text-lg md:text-xl text-muted-foreground font-sans leading-relaxed mb-10 max-w-2xl mx-auto">
+                {project.descriptor}
+              </p>
+            )}
+
+            {/* Project Details - Horizontal Row */}
+            {project.metadata && (
+              <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm">
+                {project.metadata.role && (
+                  <MetadataItemInline label="Role" value={project.metadata.role} />
+                )}
+                {project.metadata.focus && (
+                  <MetadataItemInline label="Focus" value={project.metadata.focus} />
+                )}
+                {project.metadata.context && (
+                  <MetadataItemInline label="Context" value={project.metadata.context} />
+                )}
+                {project.metadata.timeline && (
+                  <MetadataItemInline label="Timeline" value={project.metadata.timeline} />
                 )}
               </div>
-
-              {/* Right: Hero Image */}
-              {project.heroImage && (
-                <div className="relative">
-                  <div className="rounded-lg overflow-hidden shadow-xl bg-card">
-                    <img
-                      src={project.heroImage.src}
-                      alt={project.heroImage.alt}
-                      className="w-full h-auto object-cover"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
+            )}
           </div>
+
+          {/* Hero Image - Full Width */}
+          {project.heroImage && (
+            <div className="max-w-6xl mx-auto px-4 md:px-8 pb-16 md:pb-20">
+              <div className="rounded-lg overflow-hidden shadow-xl bg-card">
+                <img
+                  src={project.heroImage.src}
+                  alt={project.heroImage.alt}
+                  className="w-full h-auto object-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          )}
         </header>
 
         {/* Main Content */}
         {hasNarrative ? (
           <article className="animate-fade-up-delay-1">
-            {/* Overview Section with Project Details Sidebar */}
+            {/* Overview Section - Simple Layout */}
             {project.narrative?.overview && (
               <section className="py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-6 md:px-12">
-                  <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-                    {/* Overview Content */}
-                    <div className="md:col-span-2">
-                      <SectionLabel>Overview</SectionLabel>
-                      <NarrativeContent content={project.narrative.overview} />
-                    </div>
-
-                    {/* Project Details Card */}
-                    {project.metadata && (
-                      <div className="md:col-span-1">
-                        <div className="bg-card rounded-lg p-6 md:p-8 shadow-sm border border-border sticky top-32">
-                          <h3 className="font-sans font-medium text-foreground mb-6">Project Details</h3>
-                          <div className="space-y-5">
-                            {project.metadata.role && (
-                              <MetadataItem label="Role" value={project.metadata.role} />
-                            )}
-                            {project.metadata.focus && (
-                              <MetadataItem label="Focus" value={project.metadata.focus} />
-                            )}
-                            {project.metadata.context && (
-                              <MetadataItem label="Context" value={project.metadata.context} />
-                            )}
-                            {project.metadata.timeline && (
-                              <MetadataItem label="Timeline" value={project.metadata.timeline} />
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                <div className="max-w-3xl mx-auto px-6 md:px-12">
+                  <SectionLabel>Overview</SectionLabel>
+                  <NarrativeContent content={project.narrative.overview} />
                 </div>
               </section>
             )}
@@ -205,11 +193,19 @@ const ProjectPage = () => {
   );
 };
 
-// Section Label Component
+// Section Label Component - Made bigger
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block text-xs font-sans font-medium tracking-[0.15em] uppercase text-primary mb-4">
+  <span className="inline-block text-sm font-sans font-medium tracking-[0.15em] uppercase text-primary mb-4">
     {children}
   </span>
+);
+
+// Metadata Item for Inline Display in Hero
+const MetadataItemInline = ({ label, value }: { label: string; value: string }) => (
+  <div className="text-center">
+    <span className="text-muted-foreground block mb-1">{label}</span>
+    <span className="text-foreground font-medium">{value}</span>
+  </div>
 );
 
 // Narrative Content with Paragraphs
@@ -251,7 +247,7 @@ const ContentSection = ({ label, content, variant = 'default' }: ContentSectionP
     <section className={`py-20 md:py-28 ${bgClass}`}>
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <SectionLabel>{label}</SectionLabel>
-        <h2 className="font-serif text-2xl md:text-3xl font-normal text-foreground mb-8">
+        <h2 className="font-serif text-xl md:text-2xl font-normal text-foreground mb-8">
           {getSectionTitle(label)}
         </h2>
         <NarrativeContent content={content} />
