@@ -12,7 +12,7 @@ export const Contact = () => {
               Get in Touch
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground">
-              Contact
+              Let's Connect
             </h2>
           </div>
           
