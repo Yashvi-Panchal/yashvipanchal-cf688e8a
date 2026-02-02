@@ -3,19 +3,15 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { getProjectById, ProjectImage } from '@/data/projects';
 import { ArrowLeft } from 'lucide-react';
+
 const ProjectPage = () => {
-  const {
-    id
-  } = useParams<{
-    id: string;
-  }>();
+  const { id } = useParams<{ id: string }>();
   const project = id ? getProjectById(id) : undefined;
+
   if (!project) {
-    return <div className="min-h-screen bg-background">
-        <Navigation breadcrumb={{
-        label: 'Project Not Found',
-        href: '#'
-      }} />
+    return (
+      <div className="min-h-screen bg-background">
+        <Navigation breadcrumb={{ label: 'Project Not Found', href: '#' }} />
         <main className="pt-[var(--nav-height)]">
           <div className="section-container section-spacing">
             <h1 className="font-serif text-3xl">Project not found</h1>
@@ -25,164 +21,294 @@ const ProjectPage = () => {
           </div>
         </main>
         <Footer />
-      </div>;
+      </div>
+    );
   }
+
   const hasNarrative = project.narrative && Object.keys(project.narrative).length > 0;
-  return <div className="min-h-screen bg-background">
-      <Navigation breadcrumb={{
-      label: project.title,
-      href: `/work/${project.id}`
-    }} />
-      
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation breadcrumb={{ label: project.title, href: `/work/${project.id}` }} />
+
       <main className="pt-[var(--nav-height)]">
-        {/* Hero Section */}
-        <header className="animate-fade-up">
+        {/* Hero Section - Full Width with Soft Background */}
+        <header className="animate-fade-up bg-primary/5">
           {/* Back link */}
-          <div className="max-w-3xl mx-auto px-6 md:px-8 pt-12 md:pt-16">
-            <Link to="/#work" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 md:pt-12">
+            <Link
+              to="/#work"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+            >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <span className="text-sm font-sans">Back to Work</span>
             </Link>
           </div>
 
-          {/* Title & Descriptor */}
-          <div className="max-w-3xl mx-auto px-6 md:px-8 pt-12 md:pt-16">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-6 text-foreground">
-              {project.title}
-            </h1>
-            {project.descriptor && <p className="text-xl md:text-2xl text-muted-foreground font-sans leading-relaxed max-w-2xl">
-                {project.descriptor}
-              </p>}
-          </div>
-
-          {/* Metadata Row */}
-          {project.metadata && <div className="max-w-3xl mx-auto px-6 md:px-8 pt-10">
-              <div className="flex flex-wrap gap-x-12 gap-y-4 text-sm font-sans border-t border-border pt-6">
-                {project.metadata.role && <div>
-                    <span className="text-muted-foreground block mb-1">Role</span>
-                    <span className="text-foreground">{project.metadata.role}</span>
-                  </div>}
-                {project.metadata.focus && <div>
-                    <span className="text-muted-foreground block mb-1">Focus</span>
-                    <span className="text-foreground">{project.metadata.focus}</span>
-                  </div>}
-                {project.metadata.context && <div>
-                    <span className="text-muted-foreground block mb-1">Context</span>
-                    <span className="text-foreground">{project.metadata.context}</span>
-                  </div>}
-                {project.metadata.timeline && <div>
-                    <span className="text-muted-foreground block mb-1">Timeline</span>
-                    <span className="text-foreground">{project.metadata.timeline}</span>
-                  </div>}
+          {/* Hero Content - Two Column Layout */}
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+              {/* Left: Title & Descriptor */}
+              <div>
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-6 text-foreground">
+                  {project.title}
+                </h1>
+                {project.descriptor && (
+                  <p className="text-lg md:text-xl text-muted-foreground font-sans leading-relaxed">
+                    {project.descriptor}
+                  </p>
+                )}
               </div>
-            </div>}
 
-          {/* Hero Image */}
-          {project.heroImage && <div className="w-full mt-12 md:mt-16">
-              <ProjectImageBlock image={project.heroImage} />
-            </div>}
+              {/* Right: Hero Image */}
+              {project.heroImage && (
+                <div className="relative">
+                  <div className="rounded-lg overflow-hidden shadow-xl bg-card">
+                    <img
+                      src={project.heroImage.src}
+                      alt={project.heroImage.alt}
+                      className="w-full h-auto object-cover"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </header>
 
-        {/* Content Sections */}
-        {hasNarrative ? <article className="animate-fade-up-delay-1">
-            {project.narrative?.overview && <>
-                <NarrativeSection title="Overview" content={project.narrative.overview} />
-                {project.sectionImages?.afterOverview && <ProjectImageBlock image={project.sectionImages.afterOverview} />}
-              </>}
+        {/* Main Content */}
+        {hasNarrative ? (
+          <article className="animate-fade-up-delay-1">
+            {/* Overview Section with Project Details Sidebar */}
+            {project.narrative?.overview && (
+              <section className="py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-6 md:px-12">
+                  <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+                    {/* Overview Content */}
+                    <div className="md:col-span-2">
+                      <SectionLabel>Overview</SectionLabel>
+                      <NarrativeContent content={project.narrative.overview} />
+                    </div>
 
-            {project.narrative?.whyItMattered && <>
-                <NarrativeSection title="Why This Mattered" content={project.narrative.whyItMattered} />
-                {project.sectionImages?.afterWhyItMattered && <ProjectImageBlock image={project.sectionImages.afterWhyItMattered} />}
-              </>}
+                    {/* Project Details Card */}
+                    {project.metadata && (
+                      <div className="md:col-span-1">
+                        <div className="bg-card rounded-lg p-6 md:p-8 shadow-sm border border-border sticky top-32">
+                          <h3 className="font-sans font-medium text-foreground mb-6">Project Details</h3>
+                          <div className="space-y-5">
+                            {project.metadata.role && (
+                              <MetadataItem label="Role" value={project.metadata.role} />
+                            )}
+                            {project.metadata.focus && (
+                              <MetadataItem label="Focus" value={project.metadata.focus} />
+                            )}
+                            {project.metadata.context && (
+                              <MetadataItem label="Context" value={project.metadata.context} />
+                            )}
+                            {project.metadata.timeline && (
+                              <MetadataItem label="Timeline" value={project.metadata.timeline} />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </section>
+            )}
 
-            {project.narrative?.whatIObserved && <>
-                <NarrativeSection title="Observations" content={project.narrative.whatIObserved} />
-                {project.sectionImages?.afterWhatIObserved && <ProjectImageBlock image={project.sectionImages.afterWhatIObserved} />}
-              </>}
+            {/* Full Width Image After Overview */}
+            {project.sectionImages?.afterOverview && (
+              <FullWidthImage image={project.sectionImages.afterOverview} />
+            )}
 
-            {project.narrative?.howIApproached && <>
-                <NarrativeSection title="Approach" content={project.narrative.howIApproached} />
-                {project.sectionImages?.afterHowIApproached && <ProjectImageBlock image={project.sectionImages.afterHowIApproached} />}
-              </>}
+            {/* Why This Mattered */}
+            {project.narrative?.whyItMattered && (
+              <ContentSection
+                label="Why This Mattered"
+                content={project.narrative.whyItMattered}
+              />
+            )}
 
-            {project.narrative?.whatIExplored && <>
-                <NarrativeSection title="Exploration" content={project.narrative.whatIExplored} />
-                {project.sectionImages?.afterWhatIExplored && <ProjectImageBlock image={project.sectionImages.afterWhatIExplored} />}
-              </>}
+            {/* Full Width Image After Why It Mattered */}
+            {project.sectionImages?.afterWhyItMattered && (
+              <FullWidthImage image={project.sectionImages.afterWhyItMattered} />
+            )}
 
-            {project.narrative?.whatItShaped && <NarrativeSection title="Reflection" content={project.narrative.whatItShaped} />}
+            {/* Observations */}
+            {project.narrative?.whatIObserved && (
+              <ContentSection
+                label="Observations"
+                content={project.narrative.whatIObserved}
+                variant="highlighted"
+              />
+            )}
 
-            {/* Context Section */}
-            <div className="max-w-3xl mx-auto px-6 md:px-8 py-16 md:py-24">
-              <div className="border-t border-border pt-12">
-                <span className="text-xs font-sans font-medium tracking-[0.15em] uppercase text-muted-foreground">
-                  Context
-                </span>
-                <p className="mt-4 text-foreground/80 font-sans leading-relaxed">
-                  {project.context}
-                </p>
-              </div>
-            </div>
-          </article> :
-      // Fallback for projects without narrative structure
-      <article className="animate-fade-up-delay-1">
-            <NarrativeSection title="What was explored" content={project.explored} />
-            
-            {project.fullDescription && <NarrativeSection title="Overview" content={project.fullDescription} />}
+            {/* Full Width Image After Observations */}
+            {project.sectionImages?.afterWhatIObserved && (
+              <FullWidthImage image={project.sectionImages.afterWhatIObserved} />
+            )}
 
-            {/* Context Section */}
-            <div className="max-w-3xl mx-auto px-6 md:px-8 py-16 md:py-24">
-              <div className="border-t border-border pt-12">
-                <span className="text-xs font-sans font-medium tracking-[0.15em] uppercase text-muted-foreground">
-                  Context
-                </span>
-                <p className="mt-4 text-foreground/80 font-sans leading-relaxed">
-                  {project.context}
-                </p>
-              </div>
-            </div>
-          </article>}
+            {/* Approach */}
+            {project.narrative?.howIApproached && (
+              <ContentSection
+                label="Approach"
+                content={project.narrative.howIApproached}
+              />
+            )}
+
+            {/* Full Width Image After Approach */}
+            {project.sectionImages?.afterHowIApproached && (
+              <FullWidthImage image={project.sectionImages.afterHowIApproached} />
+            )}
+
+            {/* Exploration */}
+            {project.narrative?.whatIExplored && (
+              <ContentSection
+                label="Exploration"
+                content={project.narrative.whatIExplored}
+              />
+            )}
+
+            {/* Full Width Image After Exploration */}
+            {project.sectionImages?.afterWhatIExplored && (
+              <FullWidthImage image={project.sectionImages.afterWhatIExplored} />
+            )}
+
+            {/* Reflection */}
+            {project.narrative?.whatItShaped && (
+              <ContentSection
+                label="Reflection"
+                content={project.narrative.whatItShaped}
+                variant="closing"
+              />
+            )}
+
+            {/* Context Footer */}
+            <ContextFooter context={project.context} />
+          </article>
+        ) : (
+          // Fallback for projects without narrative structure
+          <article className="animate-fade-up-delay-1">
+            <ContentSection label="What was explored" content={project.explored} />
+            {project.fullDescription && (
+              <ContentSection label="Overview" content={project.fullDescription} />
+            )}
+            <ContextFooter context={project.context} />
+          </article>
+        )}
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
-interface NarrativeSectionProps {
-  title: string;
+
+// Section Label Component
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-block text-xs font-sans font-medium tracking-[0.15em] uppercase text-primary mb-4">
+    {children}
+  </span>
+);
+
+// Narrative Content with Paragraphs
+const NarrativeContent = ({ content }: { content: string }) => {
+  const paragraphs = content.split('\n\n').filter((p) => p.trim());
+  return (
+    <div className="space-y-6">
+      {paragraphs.map((paragraph, index) => (
+        <p
+          key={index}
+          className="font-serif text-lg md:text-xl text-foreground/90 leading-[1.8]"
+        >
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+// Metadata Item for Project Details Card
+const MetadataItem = ({ label, value }: { label: string; value: string }) => (
+  <div>
+    <span className="text-sm text-muted-foreground block mb-1">{label}</span>
+    <span className="text-foreground font-medium">{value}</span>
+  </div>
+);
+
+// Content Section Component
+interface ContentSectionProps {
+  label: string;
   content: string;
+  variant?: 'default' | 'highlighted' | 'closing';
 }
-const NarrativeSection = ({
-  title,
-  content
-}: NarrativeSectionProps) => {
-  // Split content by double newlines to create paragraphs
-  const paragraphs = content.split('\n\n').filter(p => p.trim());
-  return <section className="max-w-3xl mx-auto px-6 md:px-8 py-16 md:py-24 my-px">
-      <h2 className="text-xs font-sans font-medium tracking-[0.15em] uppercase text-primary mb-8">
-        {title}
-      </h2>
-      <div className="space-y-6">
-        {paragraphs.map((paragraph, index) => <p key={index} className="font-serif text-lg md:text-xl text-foreground/90 leading-[1.8]">
-            {paragraph}
-          </p>)}
+
+const ContentSection = ({ label, content, variant = 'default' }: ContentSectionProps) => {
+  const bgClass = variant === 'highlighted' ? 'bg-muted/30' : variant === 'closing' ? 'bg-primary/5' : '';
+  
+  return (
+    <section className={`py-20 md:py-28 ${bgClass}`}>
+      <div className="max-w-3xl mx-auto px-6 md:px-12">
+        <SectionLabel>{label}</SectionLabel>
+        <h2 className="font-serif text-2xl md:text-3xl font-normal text-foreground mb-8">
+          {getSectionTitle(label)}
+        </h2>
+        <NarrativeContent content={content} />
       </div>
-    </section>;
+    </section>
+  );
 };
-interface ProjectImageBlockProps {
+
+// Get section title based on label
+const getSectionTitle = (label: string): string => {
+  const titles: Record<string, string> = {
+    'Why This Mattered': 'Understanding the Stakes',
+    'Observations': 'Key Insights',
+    'Approach': 'Research & Synthesis',
+    'Exploration': 'Directions Explored',
+    'Reflection': 'What This Shaped',
+    'What was explored': 'Exploration',
+    'Overview': 'Project Overview',
+  };
+  return titles[label] || label;
+};
+
+// Full Width Image Component
+interface FullWidthImageProps {
   image: ProjectImage;
 }
-const ProjectImageBlock = ({
-  image
-}: ProjectImageBlockProps) => {
-  return <figure className="w-full my-8 md:my-12">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
-        <div className="relative overflow-hidden rounded-sm bg-muted">
-          <img src={image.src} alt={image.alt} className="w-full h-auto object-cover" loading="lazy" />
-        </div>
-        {image.caption && <figcaption className="max-w-3xl mx-auto px-2 mt-4 text-sm text-muted-foreground font-sans text-center">
-            {image.caption}
-          </figcaption>}
+
+const FullWidthImage = ({ image }: FullWidthImageProps) => (
+  <figure className="w-full py-8 md:py-12 bg-muted/20">
+    <div className="max-w-6xl mx-auto px-4 md:px-8">
+      <div className="relative overflow-hidden rounded-lg shadow-lg bg-card">
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="w-full h-auto object-cover"
+          loading="lazy"
+        />
       </div>
-    </figure>;
-};
+      {image.caption && (
+        <figcaption className="max-w-3xl mx-auto px-2 mt-6 text-sm text-muted-foreground font-sans text-center">
+          {image.caption}
+        </figcaption>
+      )}
+    </div>
+  </figure>
+);
+
+// Context Footer Component
+const ContextFooter = ({ context }: { context: string }) => (
+  <section className="py-16 md:py-24 border-t border-border">
+    <div className="max-w-3xl mx-auto px-6 md:px-12">
+      <SectionLabel>Context</SectionLabel>
+      <p className="font-sans text-foreground/80 leading-relaxed text-lg">
+        {context}
+      </p>
+    </div>
+  </section>
+);
+
 export default ProjectPage;

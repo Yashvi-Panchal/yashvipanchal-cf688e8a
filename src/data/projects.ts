@@ -40,10 +40,10 @@ export interface Project {
 }
 
 // Import images for CPP Disability project
-import cppdProcessFlowchart from '@/assets/cpp-d/process-flowchart.jpg';
-import cppdJourneyMapPR from '@/assets/cpp-d/journey-map-pr.jpg';
-import cppdJourneyMapCPPD from '@/assets/cpp-d/journey-map-cppd.jpg';
-import cppdAffinityMapping from '@/assets/cpp-d/affinity-mapping.jpg';
+import cppdHeroImage from '@/assets/cpp-d/hero-image.jpg';
+import cppdProcessFlowchart from '@/assets/cpp-d/process-flowchart-new.jpg';
+import cppdJourneyMap from '@/assets/cpp-d/journey-map-new.jpg';
+import cppdAffinityMapping from '@/assets/cpp-d/affinity-mapping-new.jpg';
 
 // Canada Pension Plan Disability project with full narrative
 const cppDisabilityProject: Project = {
@@ -57,11 +57,25 @@ const cppDisabilityProject: Project = {
     focus: 'User Research & Journey Mapping',
     context: 'Government Partnership',
   },
+  heroImage: {
+    src: cppdHeroImage,
+    alt: 'Abstract illustration of people navigating through a complex system of forms and pathways',
+  },
   sectionImages: {
     afterOverview: {
       src: cppdProcessFlowchart,
       alt: 'CPP Disability application process flowchart showing decision points and pathways',
       caption: 'Mapping the decision architecture: the complex pathways through the CPP-D application system',
+    },
+    afterWhatIObserved: {
+      src: cppdJourneyMap,
+      alt: 'Journey map showing the emotional experience of a CPP-D applicant through stages of the process',
+      caption: 'Client journey map: tracing emotional states across the application lifecycle',
+    },
+    afterHowIApproached: {
+      src: cppdAffinityMapping,
+      alt: 'Affinity mapping board organizing participant research insights into thematic clusters',
+      caption: 'Affinity mapping: synthesizing participant insights into patterns and themes',
     },
   },
   narrative: {
