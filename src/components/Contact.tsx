@@ -19,7 +19,7 @@ export const Contact = () => {
           {/* Right column - Content */}
           <div className="md:col-span-8">
             <p className="text-foreground/80 font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
-              If you're working on something complex or unclear, I'm always interested in talking.
+              I'm seeking opportunities in UX research, service design, customer experience, or coordination roles. I'm open to full-time, contract, or project-based work across Canada.
             </p>
             
             <div className="space-y-4">
