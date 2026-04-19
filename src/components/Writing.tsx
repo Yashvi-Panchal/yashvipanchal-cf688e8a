@@ -1,6 +1,6 @@
 import writing1 from '@/assets/writing-1.jpg';
-import writing2 from '@/assets/about-portrait.jpg';
-import writing3 from '@/assets/hero-portrait.jpg';
+import writing2 from '@/assets/writing-2.jpg';
+import writing3 from '@/assets/writing-3.jpg';
 
 const entries = [
   {
