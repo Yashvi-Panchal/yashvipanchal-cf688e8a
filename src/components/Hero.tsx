@@ -7,15 +7,9 @@ export const Hero = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
           {/* Left — text */}
           <div className="md:col-span-7 order-2 md:order-1">
-            <p className="eyebrow mb-6 animate-fade-up">
-              Montréal · India · Canada
-            </p>
-
-            <h1 className="font-serif text-foreground tracking-tight leading-[0.95] mb-6 animate-fade-up-delay-1"
-                style={{ fontSize: 'clamp(48px, 7vw, 92px)', fontWeight: 500 }}>
-              Yashvi
-              <br />
-              Panchal
+            <h1 className="font-serif text-foreground tracking-tight leading-[1.02] mb-6 animate-fade-up whitespace-nowrap"
+                style={{ fontSize: 'clamp(40px, 5.5vw, 72px)', fontWeight: 600 }}>
+              Yashvi Panchal
             </h1>
 
             <p className="font-serif italic text-muted-foreground mb-7 animate-fade-up-delay-2"
@@ -23,7 +17,8 @@ export const Hero = () => {
               Designing clarity in a complex world.
             </p>
 
-            <p className="font-sans text-foreground/75 leading-relaxed max-w-lg mb-10 animate-fade-up-delay-3 text-[15.5px]">
+            <p className="font-sans text-foreground/75 leading-relaxed max-w-lg mb-10 animate-fade-up-delay-3"
+               style={{ fontSize: '16px' }}>
               Designer and researcher working at the intersection of service design, user research, and clear communication. I help organizations understand their users and improve the systems that hold them.
             </p>
 
@@ -39,8 +34,8 @@ export const Hero = () => {
               <img
                 src={heroPortrait}
                 alt="Portrait of Yashvi Panchal smiling"
-                className="w-full h-[420px] md:h-[560px] object-cover"
-                style={{ borderRadius: '2px' }}
+                className="w-full object-cover"
+                style={{ height: 'clamp(360px, 55vh, 480px)', maxHeight: '480px', borderRadius: '2px' }}
                 loading="eager"
               />
             </div>
