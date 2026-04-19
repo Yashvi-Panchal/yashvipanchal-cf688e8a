@@ -1,16 +1,16 @@
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="py-10 border-t border-hairline">
       <div className="section-container">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-sm text-muted-foreground font-sans">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <p className="font-sans text-[13px] text-muted-foreground">
             © {currentYear} Yashvi Panchal. All rights reserved.
           </p>
-          
-          <p className="text-sm text-muted-foreground font-sans">
-            Designed with intention. Built with restraint.
+
+          <p className="font-serif italic text-primary text-[15px]">
+            Designed with intention.
           </p>
         </div>
       </div>
