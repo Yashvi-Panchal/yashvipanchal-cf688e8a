@@ -38,20 +38,32 @@ export const Work = () => {
 
                 <div className="md:col-span-5">
                   <h3 className="font-serif text-foreground transition-colors group-hover:text-primary flex items-start gap-3"
-                      style={{ fontSize: 'clamp(22px, 2.4vw, 32px)', fontWeight: 500, lineHeight: 1.15 }}>
+                      style={{ fontSize: 'clamp(26px, 2.4vw, 28px)', fontWeight: 500, lineHeight: 1.15 }}>
                     <span>{project.title}</span>
                     <ArrowUpRight className="w-5 h-5 mt-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </h3>
                 </div>
 
                 <div className="md:col-span-5">
-                  <p className="font-sans text-[14.5px] text-foreground/75 leading-relaxed">
+                  <p className="font-sans text-foreground/75 leading-relaxed" style={{ fontSize: '15px' }}>
                     {project.descriptor || project.context}
                   </p>
                 </div>
 
                 <div className="md:col-span-1 flex md:justify-end">
-                  <span className="pill">{tagFor(project.id)}</span>
+                  <span
+                    className="inline-flex items-center font-sans uppercase"
+                    style={{
+                      fontSize: '11px',
+                      letterSpacing: '0.1em',
+                      padding: '8px 16px',
+                      border: '1px solid hsl(var(--foreground) / 0.18)',
+                      color: 'hsl(var(--foreground) / 0.72)',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    {tagFor(project.id)}
+                  </span>
                 </div>
               </div>
             </Link>

@@ -32,7 +32,7 @@ export const About = () => {
                   right: '-18px',
                   width: '120px',
                   height: '120px',
-                  border: '1px solid hsl(var(--taupe))',
+                  border: '2px solid hsl(var(--taupe))',
                   borderRadius: '2px',
                 }}
               />
@@ -51,7 +51,7 @@ export const About = () => {
               </span>
             </h2>
 
-            <div className="space-y-5 text-foreground/80 font-sans text-[15.5px] leading-relaxed max-w-xl">
+            <div className="space-y-5 text-foreground/80 font-sans leading-relaxed max-w-xl" style={{ fontSize: '15px' }}>
               <p>
                 My work sits between research, service design, and communication. I'm drawn to the messy middle of public services and complex organizations — where policies meet people, and where small frictions add up to real consequences.
               </p>
