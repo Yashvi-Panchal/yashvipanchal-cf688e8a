@@ -1,28 +1,52 @@
+import heroPortrait from '@/assets/hero-portrait.jpg';
+
 export const Hero = () => {
-  return <section className="min-h-screen flex items-center pt-16">
-      <div className="section-container w-full">
-        <div className="max-w-3xl">
-          <p className="text-muted-foreground font-sans text-sm md:text-base mb-4 animate-fade-up">
-            Designer & Researcher
-          </p>
-          
-          <h1 className="font-serif text-5xl lg:text-8xl font-medium tracking-tight mb-8 animate-fade-up-delay-1 px-0 my-[7px] md:text-7xl">
-            Yashvi Panchal
-          </h1>
-          
-          <p className="text-xl font-sans leading-relaxed max-w-2xl animate-fade-up-delay-2 text-muted-foreground md:text-lg">
-            I help organizations understand their users and improve services through research, design thinking, and clear communication.
-          </p>
-          
-          <div className="mt-12 animate-fade-up-delay-3">
-            <a href="#work" className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-primary hover:text-primary/80 transition-colors group">
-              View selected work
-              <svg className="w-4 h-4 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
+  return (
+    <section className="pt-28 md:pt-32 pb-16 md:pb-24">
+      <div className="section-container">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+          {/* Left — text */}
+          <div className="md:col-span-7 order-2 md:order-1">
+            <p className="eyebrow mb-6 animate-fade-up">
+              Montréal · India · Canada
+            </p>
+
+            <h1 className="font-serif text-foreground tracking-tight leading-[0.95] mb-6 animate-fade-up-delay-1"
+                style={{ fontSize: 'clamp(48px, 7vw, 92px)', fontWeight: 500 }}>
+              Yashvi
+              <br />
+              Panchal
+            </h1>
+
+            <p className="font-serif italic text-muted-foreground mb-7 animate-fade-up-delay-2"
+               style={{ fontSize: 'clamp(20px, 2vw, 26px)' }}>
+              Designing clarity in a complex world.
+            </p>
+
+            <p className="font-sans text-foreground/75 leading-relaxed max-w-lg mb-10 animate-fade-up-delay-3 text-[15.5px]">
+              Designer and researcher working at the intersection of service design, user research, and clear communication. I help organizations understand their users and improve the systems that hold them.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3 animate-fade-up-delay-4">
+              <a href="#work" className="btn-terracotta">View my work</a>
+              <a href="#writing" className="btn-ghost">Read my writing</a>
+            </div>
+          </div>
+
+          {/* Right — portrait */}
+          <div className="md:col-span-5 order-1 md:order-2 animate-fade-up">
+            <div className="relative">
+              <img
+                src={heroPortrait}
+                alt="Portrait of Yashvi Panchal smiling"
+                className="w-full h-[420px] md:h-[560px] object-cover"
+                style={{ borderRadius: '2px' }}
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };

@@ -1,51 +1,79 @@
+import aboutPortrait from '@/assets/about-portrait.jpg';
+
+const tags = [
+  'Systems thinking',
+  'Human behaviour',
+  'Service design',
+  'Research',
+  'Bilingual EN/FR',
+];
+
 export const About = () => {
   return (
-    <section id="about" className="section-spacing border-t border-border">
+    <section id="about" className="section-spacing border-t border-hairline">
       <div className="section-container">
-        <h2 className="font-serif text-3xl md:text-4xl font-medium mb-12">
-          About
-        </h2>
-        
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-          <div className="md:col-span-7">
-            <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
-              <p>
-                I'm a designer and researcher with experience in user research, service design, and project coordination. My background combines design studio work with public-sector research, where I've worked on understanding user needs and improving complex services.
-              </p>
-              
-              <p>
-                I'm interested in work at the intersection of research, design, and communication — understanding user needs, mapping service journeys, and translating insights into clear, actionable recommendations.
-              </p>
+        <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-start">
+          {/* Left — portrait with offset accent square */}
+          <div className="md:col-span-5">
+            <div className="relative inline-block w-full">
+              <img
+                src={aboutPortrait}
+                alt="Yashvi Panchal in a thoughtful pose"
+                className="w-full object-cover"
+                style={{ aspectRatio: '3 / 4', borderRadius: '2px' }}
+                loading="lazy"
+              />
+              {/* Decorative offset square */}
+              <span
+                aria-hidden="true"
+                className="hidden md:block absolute"
+                style={{
+                  bottom: '-18px',
+                  right: '-18px',
+                  width: '120px',
+                  height: '120px',
+                  border: '1px solid hsl(var(--taupe))',
+                  borderRadius: '2px',
+                }}
+              />
             </div>
           </div>
-          
-          <div className="md:col-span-5">
-            <div className="bg-card border border-border p-6 md:p-8">
-              <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
-                Skills
-              </h3>
-              <ul className="space-y-3 font-sans">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1.5">•</span>
-                  <span>User research & interviews</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1.5">•</span>
-                  <span>Journey mapping</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1.5">•</span>
-                  <span>Information synthesis</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1.5">•</span>
-                  <span>Stakeholder communication</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1.5">•</span>
-                  <span>Design thinking</span>
-                </li>
-              </ul>
+
+          {/* Right — content */}
+          <div className="md:col-span-7">
+            <p className="eyebrow mb-5">About me</p>
+
+            <h2 className="font-serif text-foreground leading-[1.05] mb-8"
+                style={{ fontSize: 'clamp(34px, 4vw, 52px)', fontWeight: 500 }}>
+              I think in systems.{' '}
+              <span className="italic text-sage block md:inline">
+                I feel in people.
+              </span>
+            </h2>
+
+            <div className="space-y-5 text-foreground/80 font-sans text-[15.5px] leading-relaxed max-w-xl">
+              <p>
+                My work sits between research, service design, and communication. I'm drawn to the messy middle of public services and complex organizations — where policies meet people, and where small frictions add up to real consequences.
+              </p>
+              <p>
+                I've worked with public-sector teams on benefits, immigration, and customer experience. Across each project, my role has been the same: listen carefully, map what's actually happening, and translate it into something teams can act on.
+              </p>
+              <p>
+                I'm bilingual (English / French), based between Montréal and Canada with roots in India, and most at home when I'm helping a team see their system more clearly.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-3">
+              {tags.map((tag, i) => (
+                <span key={tag} className="flex items-center gap-3">
+                  <span className="font-sans text-[13px] text-foreground/75">
+                    {tag}
+                  </span>
+                  {i < tags.length - 1 && (
+                    <span className="text-foreground/30">·</span>
+                  )}
+                </span>
+              ))}
             </div>
           </div>
         </div>

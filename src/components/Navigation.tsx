@@ -6,7 +6,7 @@ import { NavItem } from './NavItem';
 const navItems = [
   { label: 'About', href: '/about', isPage: true },
   { label: 'Work', href: '#work' },
-  { label: 'Media', href: '#media' },
+  { label: 'Writing', href: '#writing' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -25,10 +25,7 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,7 +33,9 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage ? 'bg-background/95 backdrop-blur-sm border-b border-border' : ''
+        isScrolled || !isHomePage
+          ? 'bg-background/95 backdrop-blur-sm border-b border-hairline'
+          : ''
       }`}
       style={{ height: 'var(--nav-height)' }}
     >
@@ -44,11 +43,12 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
         <div className="flex items-center gap-2">
           <Link
             to="/"
-            className="font-serif text-lg tracking-wide hover:text-primary transition-colors"
+            className="font-serif text-xl tracking-wide text-sage hover:text-primary transition-colors"
+            style={{ fontWeight: 600 }}
           >
             YP
           </Link>
-          
+
           {breadcrumb && (
             <>
               <ChevronRight className="w-4 h-4 text-muted-foreground" />
@@ -58,8 +58,8 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
             </>
           )}
         </div>
-        
-        <ul className="flex items-center gap-6 md:gap-12">
+
+        <ul className="flex items-center gap-7 md:gap-10">
           {navItems.map((item) => (
             <li key={item.href}>
               <NavItem label={item.label} href={item.href} isPage={item.isPage} />

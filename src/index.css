@@ -2,84 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @layer base {
   :root {
-    /* Warm off-white background, charcoal secondary, sage green primary */
-    --background: 40 30% 96%;
-    --foreground: 220 20% 20%;
+    /* Cream / charcoal / terracotta palette */
+    --background: 36 35% 97%;       /* #FAF7F2 warm cream */
+    --foreground: 30 8% 10%;        /* #1C1A17 near-black */
 
-    --card: 40 25% 94%;
-    --card-foreground: 220 20% 20%;
+    --card: 36 28% 92%;             /* #F2EDE5 card cream */
+    --card-foreground: 30 8% 10%;
 
-    --popover: 40 30% 96%;
-    --popover-foreground: 220 20% 20%;
+    --popover: 36 35% 97%;
+    --popover-foreground: 30 8% 10%;
 
-    /* Sage green as primary */
-    --primary: 150 30% 40%;
-    --primary-foreground: 40 30% 96%;
+    /* Terracotta as primary accent */
+    --primary: 17 53% 47%;          /* #B85C38 */
+    --primary-foreground: 36 35% 97%;
 
-    /* Charcoal as secondary */
-    --secondary: 220 15% 25%;
-    --secondary-foreground: 40 25% 95%;
+    --secondary: 30 8% 10%;
+    --secondary-foreground: 36 35% 97%;
 
-    --muted: 40 15% 90%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 36 20% 90%;
+    --muted-foreground: 30 6% 40%;  /* #6B6660 secondary text */
 
-    --accent: 150 25% 90%;
-    --accent-foreground: 150 30% 30%;
+    --accent: 17 40% 92%;
+    --accent-foreground: 17 53% 38%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 36 35% 97%;
 
-    --border: 40 20% 85%;
-    --input: 40 20% 85%;
-    --ring: 150 30% 40%;
+    /* Hairline border at rgba(28,26,23,0.12) */
+    --border: 30 8% 10%;
+    --input: 30 8% 10%;
+    --ring: 17 53% 47%;
 
-    --radius: 0.375rem;
+    /* Sharp corners */
+    --radius: 2px;
 
-    /* Custom properties */
+    /* Sage hint for nav logo / decorative elements */
+    --sage: 138 25% 23%;            /* #2C4A35 */
+    --sage-foreground: 36 35% 97%;
+
+    /* Warm taupe for decorative offset borders */
+    --taupe: 33 14% 43%;            /* #8A7355 */
+
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'DM Sans', system-ui, sans-serif;
-    
-    --nav-height: 4rem;
+
+    --nav-height: 4.5rem;
   }
 
   .dark {
-    --background: 220 15% 10%;
-    --foreground: 40 15% 95%;
-
-    --card: 220 15% 12%;
-    --card-foreground: 40 15% 95%;
-
-    --popover: 220 15% 10%;
-    --popover-foreground: 40 15% 95%;
-
-    --primary: 145 25% 50%;
-    --primary-foreground: 220 15% 10%;
-
-    --secondary: 220 10% 18%;
-    --secondary-foreground: 40 15% 90%;
-
-    --muted: 220 10% 20%;
-    --muted-foreground: 40 10% 60%;
-
-    --accent: 145 20% 20%;
-    --accent-foreground: 145 25% 70%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 10% 20%;
-    --input: 220 10% 20%;
-    --ring: 145 25% 50%;
+    --background: 30 8% 8%;
+    --foreground: 36 30% 95%;
+    --card: 30 8% 12%;
+    --card-foreground: 36 30% 95%;
+    --popover: 30 8% 8%;
+    --popover-foreground: 36 30% 95%;
+    --primary: 17 60% 55%;
+    --primary-foreground: 30 8% 8%;
+    --secondary: 36 30% 95%;
+    --secondary-foreground: 30 8% 8%;
+    --muted: 30 8% 16%;
+    --muted-foreground: 36 10% 65%;
+    --accent: 17 30% 20%;
+    --accent-foreground: 17 60% 70%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 36 30% 95%;
+    --border: 36 30% 95%;
+    --input: 36 30% 95%;
+    --ring: 17 60% 55%;
+    --sage: 138 20% 60%;
+    --sage-foreground: 30 8% 8%;
+    --taupe: 33 14% 60%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border) / 0.12);
   }
 
   html {
@@ -89,20 +91,81 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "kern";
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+    font-weight: 500;
   }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-4xl mx-auto px-6 md:px-8;
+    @apply max-w-6xl mx-auto;
+    padding: 0 2rem;
   }
 
   .section-spacing {
-    @apply py-20 md:py-28;
+    padding: 3.5rem 0;
+  }
+
+  @screen md {
+    .section-spacing {
+      padding: 5.5rem 0;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  .hairline {
+    border-color: hsl(var(--foreground) / 0.12);
+  }
+
+  .btn-terracotta {
+    @apply inline-flex items-center justify-center gap-2 font-sans text-sm font-medium tracking-wide;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.85rem 1.6rem;
+    border-radius: 2px;
+    transition: background-color 200ms ease;
+  }
+
+  .btn-terracotta:hover {
+    background-color: hsl(var(--primary) / 0.88);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 font-sans text-sm font-medium tracking-wide;
+    background-color: transparent;
+    color: hsl(var(--foreground));
+    padding: 0.85rem 1.6rem;
+    border: 1px solid hsl(var(--foreground) / 0.25);
+    border-radius: 2px;
+    transition: all 200ms ease;
+  }
+
+  .btn-ghost:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+
+  .pill {
+    @apply inline-flex items-center font-sans;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid hsl(var(--foreground) / 0.18);
+    color: hsl(var(--foreground) / 0.72);
+    border-radius: 2px;
   }
 
   .text-balance {
@@ -111,71 +174,30 @@
 }
 
 @layer utilities {
-  /* Typewriter cursor */
-  .typewriter-cursor::after {
-    content: '|';
-    animation: blink 1s step-end infinite;
-    @apply text-primary ml-0.5;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  /* Subtle fade in */
   @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
+  .animate-fade-up { animation: fade-up 0.7s ease-out forwards; }
+  .animate-fade-up-delay-1 { animation: fade-up 0.7s ease-out 0.1s forwards; opacity: 0; }
+  .animate-fade-up-delay-2 { animation: fade-up 0.7s ease-out 0.2s forwards; opacity: 0; }
+  .animate-fade-up-delay-3 { animation: fade-up 0.7s ease-out 0.3s forwards; opacity: 0; }
+  .animate-fade-up-delay-4 { animation: fade-up 0.7s ease-out 0.4s forwards; opacity: 0; }
 
-  .animate-fade-up {
-    animation: fade-up 0.8s ease-out forwards;
-  }
-
-  .animate-fade-up-delay-1 {
-    animation: fade-up 0.8s ease-out 0.1s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-2 {
-    animation: fade-up 0.8s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-3 {
-    animation: fade-up 0.8s ease-out 0.3s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-4 {
-    animation: fade-up 0.8s ease-out 0.4s forwards;
-    opacity: 0;
-  }
-
-  /* Hover underline effect */
-  .hover-underline {
-    position: relative;
-  }
-
+  .hover-underline { position: relative; }
   .hover-underline::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    @apply bg-primary;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: hsl(var(--primary));
     transition: width 0.3s ease;
   }
+  .hover-underline:hover::after { width: 100%; }
 
-  .hover-underline:hover::after {
-    width: 100%;
-  }
+  .text-sage { color: hsl(var(--sage)); }
+  .text-taupe { color: hsl(var(--taupe)); }
+  .bg-sage { background-color: hsl(var(--sage)); }
+  .border-taupe { border-color: hsl(var(--taupe)); }
+  .border-hairline { border-color: hsl(var(--foreground) / 0.12); }
 }
