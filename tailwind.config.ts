@@ -61,16 +61,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        sage: "hsl(var(--sage))",
+        taupe: "hsl(var(--taupe))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "var(--radius)",
         sm: "var(--radius)",
       },
-      colors: {
-        sage: "hsl(var(--sage))",
-        taupe: "hsl(var(--taupe))",
-      } as any,
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
