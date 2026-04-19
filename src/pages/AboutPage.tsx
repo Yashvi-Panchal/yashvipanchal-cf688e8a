@@ -20,7 +20,10 @@ export const AboutPage = () => {
               {/* Intro */}
               <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg mb-12">
                 <p>
-                  I'm a designer and researcher with experience in user research, service design, and project coordination. My background combines design studio work with public-sector research, where I've worked on understanding user needs and improving complex services.
+                  I think in systems. I feel in people.
+                </p>
+                <p>
+                  I'm Yashvi — a human-centred designer and researcher based in Montréal. Originally from India, I moved to Canada to expand what I thought design could mean. What I found was a deeper question: how do systems shape human experience, and what can we do about it?
                 </p>
               </div>
 
@@ -31,16 +34,13 @@ export const AboutPage = () => {
                 </h2>
                 <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
                   <p>
-                    My professional experience spans both commercial and public-sector contexts.
+                    I started my career as a Design Assistant at A Cube Inc. in India — learning what it means to make something with real constraints, real clients, and real consequences. After 2.5 years, I wanted more. I wanted to understand not just how things look, but how they work for the people who have to live inside them.
                   </p>
                   <p>
-                    At A Cube Inc. in India, I worked as a Design Assistant, supporting product development, client communication, and design documentation for commercial projects.
+                    That brought me to Algonquin College in Ottawa, where I completed two post-graduate diplomas — Human-Centred Design and Interactive Media Management. During my studies I worked with Employment and Social Development Canada, researching the lived experience of people navigating the Canada Pension Plan Disability program. What I found there shaped everything: a process that looks logical on paper can be deeply irrational from the perspective of the person going through it.
                   </p>
                   <p>
-                    More recently, I collaborated with Employment and Social Development Canada on a service design project focused on improving the Canada Pension Plan Disability experience. My work included conducting user interviews, creating journey maps, and synthesizing research insights into practical recommendations.
-                  </p>
-                  <p>
-                    I hold two post-graduate diplomas from Algonquin College, Ottawa — Interactive Media Management and Human-Centred Design — and a Bachelor of Design from India.
+                    I hold a Bachelor of Design from India, and I'm currently building toward B2 French — because language is how you truly understand a place and its people.
                   </p>
                 </div>
               </div>
@@ -52,10 +52,25 @@ export const AboutPage = () => {
                 </h2>
                 <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
                   <p>
-                    I'm interested in work at the intersection of research, design, and communication. This includes understanding user needs through interviews, mapping service journeys, coordinating with stakeholders, and translating insights into clear, actionable recommendations.
+                    I work at the intersection of research, service design, and human behaviour. I'm drawn to complex systems — the kind where policies meet people, where small frictions add up to real consequences, where the gap between intent and experience is widest.
                   </p>
                   <p>
-                    My skills include user research, journey mapping, information synthesis, stakeholder communication, and design thinking.
+                    My approach is simple: follow the people. Listen carefully. Map what's actually happening. Then translate that into something teams can act on.
+                  </p>
+                </div>
+              </div>
+
+              {/* Beyond Work */}
+              <div className="mb-12">
+                <h2 className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+                  Beyond Work
+                </h2>
+                <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
+                  <p>
+                    I read about neuroscience, behavioural economics, and the science of how humans make decisions. I meditate daily. I journal. I believe that understanding yourself is the foundation of understanding anyone else — which is why human-centred design, for me, is never just a methodology. It's a way of moving through the world.
+                  </p>
+                  <p>
+                    I don't have everything figured out. But I'm here, still going — and I think that counts for something.
                   </p>
                 </div>
               </div>
@@ -67,7 +82,7 @@ export const AboutPage = () => {
                 </h2>
                 <div className="space-y-6 text-foreground/80 font-sans leading-relaxed text-lg">
                   <p>
-                    I'm seeking opportunities in UX research, service design, customer experience, or coordination roles. I'm open to full-time, contract, or project-based work across Canada.
+                    Open to opportunities in service design, UX research, and coordination roles — full-time, contract, or project-based, across Canada. If you're working on something complex or unclear, I'm always interested in talking.
                   </p>
                 </div>
               </div>
