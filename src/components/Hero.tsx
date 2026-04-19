@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section className="pt-28 md:pt-32 pb-16 md:pb-24">
       <div className="section-container">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-stretch">
           {/* Left — text */}
           <div className="md:col-span-7 order-2 md:order-1">
             <h1 className="font-serif text-foreground tracking-tight leading-[1.02] mb-6 animate-fade-up whitespace-nowrap"
@@ -29,15 +29,16 @@ export const Hero = () => {
           </div>
 
           {/* Right — portrait */}
-          <div className="md:col-span-5 order-1 md:order-2 animate-fade-up">
-            <div className="relative">
+          <div className="md:col-span-5 order-1 md:order-2 animate-fade-up h-full">
+            <div className="relative h-full overflow-hidden" style={{ borderRadius: '2px' }}>
               <img
                 src={heroPortrait}
                 alt="Portrait of Yashvi Panchal smiling"
-                className="w-full object-cover"
-                style={{ height: 'clamp(360px, 55vh, 480px)', maxHeight: '480px', borderRadius: '2px' }}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center top' }}
                 loading="eager"
               />
+              <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(247,244,238,0.08)' }} />
             </div>
           </div>
         </div>
