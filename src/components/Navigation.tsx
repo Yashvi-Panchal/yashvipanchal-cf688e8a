@@ -43,10 +43,32 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
         <div className="flex items-center gap-2">
           <Link
             to="/"
-            className="font-serif text-xl tracking-wide text-sage hover:text-primary transition-colors"
-            style={{ fontWeight: 600 }}
+            aria-label="Yashvi Panchal — Home"
+            className="group relative block font-serif overflow-hidden whitespace-nowrap"
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: '22px',
+              fontWeight: 400,
+              lineHeight: 1,
+              color: 'hsl(var(--foreground))',
+              width: '2ch',
+              transition: 'width 0.4s ease-in-out',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.width = '11ch')}
+            onMouseLeave={(e) => (e.currentTarget.style.width = '2ch')}
           >
-            YP
+            <span
+              className="inline-block align-baseline transition-opacity duration-[400ms] ease-in-out group-hover:opacity-0"
+              aria-hidden="true"
+            >
+              YP
+            </span>
+            <span
+              className="absolute left-0 top-0 inline-block opacity-0 transition-opacity duration-[400ms] ease-in-out group-hover:opacity-100"
+              aria-hidden="true"
+            >
+              Yashvi Panchal
+            </span>
           </Link>
 
           {breadcrumb && (
