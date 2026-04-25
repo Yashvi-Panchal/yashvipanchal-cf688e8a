@@ -44,15 +44,15 @@ export const Work = () => {
                   </h3>
                 </div>
 
-                <div className="md:col-span-5">
-                  <p className="font-sans text-foreground/75 leading-relaxed" style={{ fontSize: '15px' }}>
+                <div className="md:col-span-5 md:pr-8">
+                  <p className="font-sans text-foreground/75 leading-relaxed pr-8" style={{ fontSize: '15px' }}>
                     {project.descriptor || project.context}
                   </p>
                 </div>
 
-                <div className="md:col-span-1 flex md:justify-end">
+                <div className="md:col-span-1 flex md:justify-end md:gap-6">
                   <span
-                    className="inline-flex items-center font-sans uppercase"
+                    className="inline-flex items-center justify-center font-sans uppercase"
                     style={{
                       fontSize: '11px',
                       letterSpacing: '0.1em',
@@ -60,6 +60,9 @@ export const Work = () => {
                       border: '1px solid hsl(var(--foreground) / 0.18)',
                       color: 'hsl(var(--foreground) / 0.72)',
                       borderRadius: '2px',
+                      minWidth: '130px',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     {tagFor(project.id)}
