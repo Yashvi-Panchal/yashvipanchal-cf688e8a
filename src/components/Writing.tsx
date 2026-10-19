@@ -1,26 +1,19 @@
-const entries = [
+import { Link } from 'react-router-dom';
+import { posts } from '@/data/posts';
+
+const comingSoon = [
   {
     color: '#E8E0D5',
     accent: '#B85C38',
     category: 'Essay',
     title: 'On reading systems before redesigning them',
-    status: 'Coming soon',
-    label: '01',
+    label: '02',
   },
   {
     color: '#D8E4DA',
     accent: '#2C4A35',
     category: 'Field note',
     title: 'What waiting teaches you about institutional time',
-    status: 'Coming soon',
-    label: '02',
-  },
-  {
-    color: '#E4DDD6',
-    accent: '#8A7355',
-    category: 'Reflection',
-    title: 'Clarity is a form of care',
-    status: 'Coming soon',
     label: '03',
   },
 ];
@@ -44,49 +37,57 @@ export const Writing = () => {
           </div>
         </div>
         <div className="grid md:grid-cols-3 gap-8 md:gap-10">
-          {entries.map((entry) => (
-            <article
-              key={entry.title}
-              className="group cursor-pointer"
-            >
-              {/* Colored card instead of photo */}
+          {posts.map((post) => (
+            <Link to={`/writing/${post.id}`} key={post.id} className="group cursor-pointer no-underline">
+              <article>
+                <div
+                  className="overflow-hidden mb-5 flex items-end justify-between p-5"
+                  style={{ borderRadius: '2px', height: '180px', background: post.color }}
+                >
+                  <span className="font-serif" style={{ fontSize: '64px', fontWeight: 400, lineHeight: 1, color: post.accent, opacity: 0.4 }}>
+                    {post.label}
+                  </span>
+                  <span className="font-sans text-[10px] tracking-widest uppercase" style={{ color: post.accent, opacity: 0.7 }}>
+                    {post.category}
+                  </span>
+                </div>
+                <p className="eyebrow mb-3" style={{ color: 'hsl(var(--foreground) / 0.5)' }}>
+                  {post.category}
+                </p>
+                <h3 className="font-serif text-foreground mb-4 transition-colors group-hover:text-primary"
+                    style={{ fontSize: '22px', fontWeight: 500, lineHeight: 1.25 }}>
+                  {post.title}
+                </h3>
+                <span className="font-sans text-[12px] tracking-widest uppercase text-muted-foreground inline-flex items-center gap-2">
+                  <span className="inline-block w-1.5 h-1.5 bg-primary" style={{ borderRadius: '2px' }} />
+                  {post.date}
+                </span>
+              </article>
+            </Link>
+          ))}
+
+          {comingSoon.map((entry) => (
+            <article key={entry.title} className="group cursor-default">
               <div
                 className="overflow-hidden mb-5 flex items-end justify-between p-5"
-                style={{
-                  borderRadius: '2px',
-                  height: '180px',
-                  background: entry.color,
-                }}
+                style={{ borderRadius: '2px', height: '180px', background: entry.color }}
               >
-                <span
-                  className="font-serif"
-                  style={{
-                    fontSize: '64px',
-                    fontWeight: 400,
-                    lineHeight: 1,
-                    color: entry.accent,
-                    opacity: 0.4,
-                  }}
-                >
+                <span className="font-serif" style={{ fontSize: '64px', fontWeight: 400, lineHeight: 1, color: entry.accent, opacity: 0.4 }}>
                   {entry.label}
                 </span>
-                <span
-                  className="font-sans text-[10px] tracking-widest uppercase"
-                  style={{ color: entry.accent, opacity: 0.7 }}
-                >
+                <span className="font-sans text-[10px] tracking-widest uppercase" style={{ color: entry.accent, opacity: 0.7 }}>
                   {entry.category}
                 </span>
               </div>
               <p className="eyebrow mb-3" style={{ color: 'hsl(var(--foreground) / 0.5)' }}>
                 {entry.category}
               </p>
-              <h3 className="font-serif text-foreground mb-4 transition-colors group-hover:text-primary"
-                  style={{ fontSize: '22px', fontWeight: 500, lineHeight: 1.25 }}>
+              <h3 className="font-serif text-foreground mb-4" style={{ fontSize: '22px', fontWeight: 500, lineHeight: 1.25 }}>
                 {entry.title}
               </h3>
               <span className="font-sans text-[12px] tracking-widest uppercase text-muted-foreground inline-flex items-center gap-2">
                 <span className="inline-block w-1.5 h-1.5 bg-primary" style={{ borderRadius: '2px' }} />
-                {entry.status}
+                Coming soon
               </span>
             </article>
           ))}
