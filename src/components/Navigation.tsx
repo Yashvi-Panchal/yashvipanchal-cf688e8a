@@ -92,3 +92,4 @@ export const Navigation = ({ breadcrumb }: NavigationProps) => {
     </nav>
   );
 };
+export { Navigation };
