@@ -14,7 +14,7 @@ export const Contact = () => {
           <blockquote
             className="font-serif italic text-foreground/60"
             style={{
-              fontSize: 'clamp(15px, 1.6vw, 20px)',
+              fontSize: 'clamp(18px, 1.6vw, 20px)',
               borderLeft: '2px solid #B85C38',
               paddingLeft: '1.5rem',
               marginTop: '2rem',
