@@ -12,18 +12,18 @@ export const Hero = () => {
               color: '#B85C38',
               fontWeight: 400
             }}>
-              Designer and Researcher · Montréal
+              Designer and Researcher · India · Canada
             </p>
             <h1 className="font-serif text-foreground tracking-tight leading-[1.05] mb-6" style={{
-              fontSize: 'clamp(44px, 5.5vw, 72px)',
+              fontSize: 'clamp(32px, 4vw, 56px)',
               fontWeight: 300
             }}>
               Yashvi<br />
               <em style={{ fontStyle: 'italic', color: '#B85C38' }}>Panchal.</em>
             </h1>
             <p className="font-serif italic text-muted-foreground" style={{
-              fontSize: 'clamp(18px, 1.8vw, 24px)',
-              lineHeight: 1.5
+              fontSize: 'clamp(16px, 1.6vw, 20px)',
+              lineHeight: 1.6
             }}>
               Designing clarity in a complex world.
             </p>
@@ -35,11 +35,11 @@ export const Hero = () => {
               lineHeight: 1.9,
               fontWeight: 300
             }}>
-              I research how systems shape human experience and I care about building things that actually work for the people inside them.
+              I study how systems shape the lives of people inside them. I write about what I find.
             </p>
-            <div className="flex flex-col gap-3" style={{ alignItems: 'flex-start' }}>
-              <a href="#work" className="btn-terracotta">View my work</a>
-              <a href="#writing" className="btn-ghost">Read my writing</a>
+            <div className="flex flex-row gap-3" style={{ alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <a href="#work" className="btn-terracotta" style={{ fontSize: '12px', padding: '10px 20px' }}>View my work</a>
+              <a href="#writing" className="btn-ghost" style={{ fontSize: '12px', padding: '10px 20px' }}>Read my writing</a>
             </div>
           </div>
 
