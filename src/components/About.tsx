@@ -5,7 +5,7 @@ const tags = [
   'Human behaviour',
   'Service design',
   'Research',
-  'Bilingual EN/FR',
+  'Learning French',
 ];
 
 export const About = () => {
@@ -13,33 +13,18 @@ export const About = () => {
     <section id="about" className="section-spacing border-t border-hairline">
       <div className="section-container">
         <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-start">
-          {/* Left — portrait with offset accent square */}
+          {/* Left: portrait */}
           <div className="md:col-span-5">
-            <div className="relative inline-block w-full">
-              <img
-                src={aboutPortrait}
-                alt="Yashvi Panchal in a thoughtful pose"
-                className="w-full object-cover"
-                style={{ aspectRatio: '3 / 4', borderRadius: '2px' }}
-                loading="lazy"
-              />
-              {/* Decorative offset square */}
-              <span
-                aria-hidden="true"
-                className="hidden md:block absolute"
-                style={{
-                  bottom: '-18px',
-                  right: '-18px',
-                  width: '120px',
-                  height: '120px',
-                  border: '2px solid hsl(var(--taupe))',
-                  borderRadius: '2px',
-                }}
-              />
-            </div>
+            <img
+              src={aboutPortrait}
+              alt="Yashvi Panchal in a thoughtful pose"
+              className="w-full object-cover"
+              style={{ aspectRatio: '3 / 4', borderRadius: '2px' }}
+              loading="lazy"
+            />
           </div>
 
-          {/* Right — content */}
+          {/* Right: content */}
           <div className="md:col-span-7">
             <p className="eyebrow mb-5">About me</p>
 
@@ -53,13 +38,13 @@ export const About = () => {
 
             <div className="space-y-5 text-foreground/80 font-sans leading-relaxed max-w-xl" style={{ fontSize: '15px' }}>
               <p>
-                My work sits between research, service design, and communication. I'm drawn to the messy middle of public services and complex organizations — where policies meet people, and where small frictions add up to real consequences.
+                My work sits between research, service design and writing. I am drawn to the places where policies meet people, because that is where small frictions turn into real consequences.
               </p>
               <p>
-                I've worked with public-sector teams on benefits, immigration, and customer experience. Across each project, my role has been the same: listen carefully, map what's actually happening, and translate it into something teams can act on.
+                I have worked on projects about disability benefits and immigration. On each one I spoke with the people going through the system, tried to understand what was really happening to them, and then explained it in a way a team could act on.
               </p>
               <p>
-                I'm bilingual (English / French), based between Montréal and Canada with roots in India, and most at home when I'm helping a team see their system more clearly.
+                I am based in India, and I spent the last few years studying and working in Canada. I am most at home when I am helping people see their own system more clearly.
               </p>
             </div>
 
