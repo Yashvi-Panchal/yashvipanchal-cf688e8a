@@ -5,7 +5,7 @@ const tags = [
   'Human behaviour',
   'Service design',
   'Research',
-  'Learning French',
+  'Bilingual EN/FR',
 ];
 
 export const About = () => {
@@ -13,18 +13,33 @@ export const About = () => {
     <section id="about" className="section-spacing border-t border-hairline">
       <div className="section-container">
         <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-start">
-          {/* Left: portrait */}
+          {/* Left — portrait with offset accent square */}
           <div className="md:col-span-5">
-            <img
-              src={aboutPortrait}
-              alt="Yashvi Panchal in a thoughtful pose"
-              className="w-full object-cover"
-              style={{ aspectRatio: '3 / 4', borderRadius: '2px' }}
-              loading="lazy"
-            />
+            <div className="relative inline-block w-full">
+              <img
+                src={aboutPortrait}
+                alt="Yashvi Panchal in a thoughtful pose"
+                className="w-full object-cover"
+                style={{ aspectRatio: '3 / 4', borderRadius: '2px' }}
+                loading="lazy"
+              />
+              {/* Decorative offset square */}
+              <span
+                aria-hidden="true"
+                className="hidden md:block absolute"
+                style={{
+                  bottom: '-18px',
+                  right: '-18px',
+                  width: '120px',
+                  height: '120px',
+                  border: '2px solid hsl(var(--taupe))',
+                  borderRadius: '2px',
+                }}
+              />
+            </div>
           </div>
 
-          {/* Right: content */}
+          {/* Right — content */}
           <div className="md:col-span-7">
             <p className="eyebrow mb-5">About me</p>
 
@@ -38,14 +53,14 @@ export const About = () => {
 
             <div className="space-y-5 text-foreground/80 font-sans leading-relaxed max-w-xl" style={{ fontSize: '15px' }}>
               <p>
-  I am a designer and researcher interested in how institutions, policies and technology shape ordinary life. My training is in human centred design, and my most substantial research so far was with Employment and Social Development Canada, where I studied how people experience applying for disability benefits.
-</p>
-<p>
-  What I keep noticing is that most systems are built around the people who run them. The people who use them are left to interpret unclear letters, long waits and forms written for someone else. I am interested in that gap, and in what it takes to close it.
-</p>
-<p>
-  I write about these observations here, alongside more personal notes on moving between countries and languages. I am based in India and spent the past few years studying and working in Canada.
-</p>
+                My work sits between research, service design, and communication. I'm drawn to the messy middle of public services and complex organizations — where policies meet people, and where small frictions add up to real consequences.
+              </p>
+              <p>
+                I've worked with public-sector teams on benefits, immigration, and customer experience. Across each project, my role has been the same: listen carefully, map what's actually happening, and translate it into something teams can act on.
+              </p>
+              <p>
+                I'm bilingual (English / French), based between Montréal and Canada with roots in India, and most at home when I'm helping a team see their system more clearly.
+              </p>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-3">
